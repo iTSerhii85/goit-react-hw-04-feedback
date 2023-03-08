@@ -11,9 +11,9 @@ export const Statistics = ({ good, neutral, bad, total, positivePercentage}) => 
             <p>Bad: {bad}</p>
             <p>Total: {total}</p>
             <Paragraph>Positive feedback:
-                {positivePercentage >= 50 ? 
-                <Span style={{backgroundColor: '#3cb371'}}>{positivePercentage} %</Span> : 
-                <Span style={{backgroundColor: '#ff0000'}}>{positivePercentage} %</Span>}
+              {positivePercentage === 50 && <Span style={{backgroundColor: '#ffa500'}}>{positivePercentage} %</Span>}
+              {positivePercentage < 50 && <Span style={{backgroundColor: '#ff0000'}}>{positivePercentage} %</Span>}
+              {positivePercentage > 50 && <Span style={{backgroundColor: '#3cb371'}}>{positivePercentage} %</Span>}
             </Paragraph>
         </div>
     )
