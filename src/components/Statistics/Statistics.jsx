@@ -1,14 +1,20 @@
 import PropTypes from 'prop-types';
 import React from "react"
+import { Paragraph, Span } from './Statistics.styled';
 
-export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+export const Statistics = ({ good, neutral, bad, total, positivePercentage}) => {
+
     return (
         <div>
             <p>Good: {good}</p>
             <p>Neutral: {neutral}</p>
             <p>Bad: {bad}</p>
             <p>Total: {total}</p>
-            <p>Positive feedback: <span>{positivePercentage} %</span></p>
+            <Paragraph>Positive feedback:
+                {positivePercentage >= 50 ? 
+                <Span style={{backgroundColor: '#3cb371'}}>{positivePercentage} %</Span> : 
+                <Span style={{backgroundColor: '#ff0000'}}>{positivePercentage} %</Span>}
+            </Paragraph>
         </div>
     )
 }
