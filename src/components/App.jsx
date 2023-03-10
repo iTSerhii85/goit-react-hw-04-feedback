@@ -13,9 +13,9 @@ export const App =()=> {
   const [bad, setBad] = useState(0);
 
  const onLeaveFeedback = (name) => {
-    if (name === 'good') {setGood(good +1)}
-    if (name === 'neutral') {setNeutral(neutral +1)}
-    if (name === 'bad') {setBad(bad + 1);}
+    if (name === 'good') {setGood(prevState => prevState +1)}
+    if (name === 'neutral') {setNeutral(prevState => prevState +1)}
+    if (name === 'bad') {setBad(prevState => prevState + 1);}
   };
 
   const optionNames = ['good', 'neutral', 'bad'];
